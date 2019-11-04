@@ -1,5 +1,6 @@
 package org.jplas.android.karyaseni;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     View tampilan;
     EditText inputemail, inputpass;
-    Button buttonSignIn;
+    Button buttonSignIn, menuSignUp, MenuLupaPassword ;
     String TAG = "tag";
 
 
@@ -29,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        inputemail = tampilan.findViewById(R.id.editLoginEmail);
-        inputpass = tampilan.findViewById(R.id.editLoginPassword);
-        buttonSignIn = tampilan.findViewById(R.id.buttonSignIn);
+        inputemail = findViewById(R.id.editLoginEmail);
+        inputpass = findViewById(R.id.editLoginPassword);
+        buttonSignIn = findViewById(R.id.buttonSignIn);
+        menuSignUp = findViewById(R.id.MenuSignUp);
+        MenuLupaPassword = findViewById(R.id.ButtonLupakatasandi);
         mAuth = FirebaseAuth.getInstance();
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,5 +63,21 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
             });
+        menuSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DaftarActivity.class);
+                startActivity(i);
+            }
+        });
+        MenuLupaPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+                startActivity(i);
+
+            }
+        });
+
     }
 }
