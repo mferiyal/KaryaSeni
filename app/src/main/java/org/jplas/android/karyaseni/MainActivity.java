@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onComplete(@Nullable Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
                                     Toast.makeText(MainActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                     FirebaseUser user = mAuth.getCurrentUser();
