@@ -13,13 +13,14 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button buttonambilgambar;
+    Button buttonambilgambar, buttonLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         buttonambilgambar = findViewById(R.id.btn_ambil_gambar);
+        buttonLogout = findViewById(R.id.btn_logout);
         buttonambilgambar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,8 +31,13 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-
-
+     /*   buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            }
+        });
+*/
 
 
     }
