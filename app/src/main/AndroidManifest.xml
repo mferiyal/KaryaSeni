@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".DaftarActivity" />
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".TampilGambar"></activity>
     </application>
 
 </manifest>

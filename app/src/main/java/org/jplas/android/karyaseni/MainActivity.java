@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    View tampilan;
+
     EditText inputemail, inputpass;
     Button buttonSignIn, menuSignUp, MenuLupaPassword ;
     String TAG = "tag";
@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
-                                    Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.makeText(MainActivity.this, "Authentication Success.",
                                             Toast.LENGTH_SHORT).show();
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
                                 } else {
                                     // If sign in fails, display a message to the user.
