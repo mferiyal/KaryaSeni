@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                    Toast.makeText(getApplicationContext(), "Authentication Success.",
                                             Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
